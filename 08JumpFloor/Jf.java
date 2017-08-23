@@ -7,6 +7,7 @@ public class Jf {
     public int jumpFloor(int target){
         int fn1=1;
         int fn2=2;
+        int sum=0;
         if(target<=0)
             return 0;
         if(target<=2){
@@ -18,10 +19,11 @@ public class Jf {
             }
         }
         while(target-->2){
-            fn1+=fn2;
-            fn2=fn1-fn2;
+            sum=fn1+fn2;
+            fn1=fn2;
+            fn2=sum;
         }
-        return fn1;
+        return sum;
     }
     public static void main(String[] args){
         int tar=3;
